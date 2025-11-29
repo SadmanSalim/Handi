@@ -1906,13 +1906,34 @@ textarea.form-control {
 .navbar>.container,
 .navbar>.container-fluid {
     position: relative;
-    height: 100px
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar-container-custom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
 }
 
 .navbar .navbar-brand {
     padding: 0;
     margin: 0;
-    line-height: 100px
+    line-height: 100px;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+}
+
+.navbar-brand-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
 }
 
 .navbar .logo-light {
@@ -2118,7 +2139,11 @@ textarea.form-control {
 
 .header-transparent .logo-light {
     display: inline-block;
-    width: 155px;
+    width: 220px;
+}
+
+.header-transparent .navbar-brand-center {
+    padding: 0;
 }
 
 .header-transparent .logo-dark {
@@ -2137,9 +2162,9 @@ textarea.form-control {
 }
 
 .header-transparent .navbar__action-btn-reserve:hover {
-    background-color: #fff;
-    border-color: #fff;
-    color: #282828
+    background-color: #B11821;
+    border-color: #B11821;
+    color: #fff
 }
 
 .header-transparent .social__icons li a {
@@ -2189,7 +2214,11 @@ textarea.form-control {
 
 .fixed-navbar .logo-dark {
     display: inline-block;
-    width: 155px;
+    width: 220px;
+}
+
+.fixed-navbar .navbar-brand-center {
+    padding: 0;
 }
 
 .fixed-navbar .navbar__action-btn,
@@ -2329,6 +2358,25 @@ textarea.form-control {
 
 .navbar__action-btn-reserve:hover {
     color: #fff
+}
+
+.navbar-nav-left {
+    margin-left: 0 !important;
+    margin-right: auto;
+}
+
+.navbar-action {
+    margin-left: auto;
+    z-index: 10;
+}
+
+.navbar-container-custom .navbar-collapse {
+    flex: 0 0 auto;
+    width: auto;
+}
+
+.navbar-container-custom .navbar-nav {
+    flex-direction: row;
 }
 
 .cart__label {
@@ -2687,6 +2735,32 @@ textarea.form-control {
 
     .navbar .navbar-nav {
         margin: 0 !important
+    }
+
+    .navbar-brand-center {
+        position: static;
+        transform: none;
+        left: auto;
+    }
+
+    .navbar-container-custom {
+        flex-wrap: wrap;
+    }
+
+    .navbar-action {
+        order: 3;
+        width: 100%;
+        text-align: center;
+        margin-top: 15px;
+    }
+
+    .navbar-container-custom .navbar-collapse {
+        order: 2;
+        width: 100%;
+    }
+
+    .navbar-brand-center {
+        order: 1;
     }
 
     .navbar .nav__item {
